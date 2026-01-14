@@ -1,102 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web Diaries</title>
+<meta charset="UTF-8">
+<title>Web Diaries | AI & Everyday Life</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Web Diaries – Day-to-Day blogs about AI and everyday life.">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5ZVY8M8V80"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5ZVY8M8V80');
-  </script>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#0f172a;
+  color:#e5e7eb;
+  scroll-behavior:smooth;
+}
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+/* HERO */
+.hero{
+  height:100vh;
+  background:url("https://images.unsplash.com/photo-1519389950473-47ba0277781c") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero h1{
+  background:rgba(0,0,0,0.6);
+  padding:30px;
+  border-radius:15px;
+  font-size:3rem;
+}
+.hero p{
+  font-size:1.2rem;
+  color:#cbd5f5;
+}
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+/* SECTION */
+section{
+  max-width:900px;
+  margin:auto;
+  padding:60px 20px;
+}
 
-    body {
-      min-height: 100vh;
-      background: linear-gradient(
-          rgba(0,0,0,0.65),
-          rgba(0,0,0,0.65)
-        ),
-        url("https://images.unsplash.com/photo-1518770660439-4636190af475");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-    }
+/* CARD */
+.card{
+  background:#020617;
+  border-radius:16px;
+  padding:20px;
+  transition:0.3s;
+  cursor:pointer;
+}
+.card:hover{
+  transform:translateY(-5px);
+}
+.card img{
+  width:100%;
+  border-radius:12px;
+}
+.card h3{
+  margin:15px 0 10px;
+  color:#38bdf8;
+}
+.card p{
+  color:#cbd5f5;
+}
 
-    .hero {
-      text-align: center;
-      animation: fadeUp 1.5s ease forwards;
-      max-width: 700px;
-      padding: 20px;
-    }
+/* BLOG */
+.post{
+  display:none;
+  animation:fade 0.8s ease;
+}
+@keyframes fade{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.date{
+  color:#94a3b8;
+  font-size:0.9rem;
+}
 
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
+/* SMALL IMAGES */
+.post img{
+  width:70%;
+  max-width:500px;
+  display:block;
+  margin:30px auto;
+  border-radius:14px;
+}
 
-    .hero p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      opacity: 0.9;
-      margin-bottom: 30px;
-    }
+/* BUTTON */
+button{
+  background:#38bdf8;
+  border:none;
+  padding:12px 18px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    .hero a {
-      display: inline-block;
-      padding: 12px 28px;
-      background: #00e5ff;
-      color: #000;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: 500;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#020617;
+  color:#94a3b8;
+}
+</style>
 
-    .hero a:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,229,255,0.4);
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+<script>
+function openPost(){
+  document.getElementById("home").style.display="none";
+  document.getElementById("blog").style.display="block";
+  window.scrollTo(0,0);
+}
+function goHome(){
+  document.getElementById("blog").style.display="none";
+  document.getElementById("home").style.display="block";
+  window.scrollTo(0,0);
+}
+</script>
 </head>
 
 <body>
+
+<!-- HOME -->
+<div id="home">
   <div class="hero">
-    <h1>Web Diaries</h1>
-    <p>
-      A personal space where I share my journey, thoughts, and learning
-      experiences in web development, technology, and life on the internet.
-    </p>
-    <a href="#">Explore Blog</a>
+    <div>
+      <h1>Web Diaries</h1>
+      <p>Day-to-Day Blogs • Real Life • Real Learning</p>
+    </div>
   </div>
+
+  <section>
+    <h2>🔥 Hot Topics</h2>
+
+    <div class="card" onclick="openPost()">
+      <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995">
+      <h3>AI & Everyday Life</h3>
+      <p>How AI tools affect real life, daily tasks, and learning.</p>
+    </div>
+  </section>
+</div>
+
+<!-- BLOG POST -->
+<div id="blog" class="post">
+  <section>
+    <button onclick="goHome()">← Back to Home</button>
+
+    <h1>🔥 AI & Everyday Life</h1>
+    <div class="date">📅 Day-to-Day Blog • January 2026</div>
+
+    <p>
+      Artificial Intelligence, also known as AI, is no longer just a tech
+      topic. Today, AI is part of our everyday life. Even if we do not
+      notice it, AI is working behind many apps and tools we use daily.
+    </p>
+
+    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+
+    <p>
+      AI tools make life easier by saving time and effort. When we search
+      on Google, AI helps show better answers. When we use social media,
+      AI decides what posts and videos we may like. Even phone cameras
+      use AI to improve photo quality automatically.
+    </p>
+
+    <h2>How AI Helps in Daily Tasks</h2>
+
+    <p>
+      In daily life, AI helps with small but important tasks. Voice
+      assistants remind us of meetings. Maps use AI to find faster
+      routes. Email apps filter spam messages. These simple things help
+      us stay organized and relaxed.
+    </p>
+
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+
+    <h2>Using AI to Learn Faster</h2>
+
+    <p>
+      AI is very helpful for learning. Students and beginners use AI to
+      understand difficult topics in simple English. AI can explain,
+      give examples, and help practice skills. This makes learning less
+      stressful and more enjoyable.
+    </p>
+
+    <p>
+      AI is not here to replace humans. It is here to support us. By
+      handling routine work, AI allows us to focus on creativity and
+      growth. AI is no longer just tech talk — it is now part of
+      everyone’s daily routine.
+    </p>
+  </section>
+</div>
+
+<footer>
+© 2026 Web Diaries • Day-to-Day Blogs
+</footer>
+
 </body>
 </html>
