@@ -2,104 +2,41 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Web Diaries | AI & Everyday Life</title>
+<title>AI & Everyday Life | Web Diaries</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Web Diaries – Day-to-Day blogs about AI and everyday life.">
+<meta name="description" content="AI & Everyday Life – How artificial intelligence helps in daily tasks and learning.">
 
 <style>
-*{box-sizing:border-box}
 body{
   margin:0;
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   background:#0f172a;
   color:#e5e7eb;
-  scroll-behavior:smooth;
+  line-height:1.8;
 }
-
-/* HERO */
-.hero{
-  height:100vh;
-  background:url("https://images.unsplash.com/photo-1519389950473-47ba0277781c") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-.hero h1{
-  background:rgba(0,0,0,0.6);
-  padding:30px;
-  border-radius:15px;
-  font-size:3rem;
-}
-.hero p{
-  font-size:1.2rem;
-  color:#cbd5f5;
-}
-
-/* SECTION */
-section{
+.container{
   max-width:900px;
   margin:auto;
-  padding:60px 20px;
+  padding:40px 20px;
 }
-
-/* CARD */
-.card{
-  background:#020617;
-  border-radius:16px;
-  padding:20px;
-  transition:0.3s;
-  cursor:pointer;
-}
-.card:hover{
-  transform:translateY(-5px);
-}
-.card img{
-  width:100%;
-  border-radius:12px;
-}
-.card h3{
-  margin:15px 0 10px;
+h1{
   color:#38bdf8;
 }
-.card p{
-  color:#cbd5f5;
-}
-
-/* BLOG */
-.post{
-  display:none;
-  animation:fade 0.8s ease;
-}
-@keyframes fade{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:translateY(0)}
+h2{
+  margin-top:40px;
+  color:#60a5fa;
 }
 .date{
   color:#94a3b8;
   font-size:0.9rem;
 }
-
-/* SMALL IMAGES */
-.post img{
-  width:70%;
-  max-width:500px;
+img{
+  width:60%;
+  max-width:450px;
   display:block;
   margin:30px auto;
-  border-radius:14px;
+  border-radius:12px;
 }
-
-/* BUTTON */
-button{
-  background:#38bdf8;
-  border:none;
-  padding:12px 18px;
-  border-radius:10px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* FOOTER */
 footer{
   text-align:center;
   padding:20px;
@@ -107,97 +44,64 @@ footer{
   color:#94a3b8;
 }
 </style>
-
-<script>
-function openPost(){
-  document.getElementById("home").style.display="none";
-  document.getElementById("blog").style.display="block";
-  window.scrollTo(0,0);
-}
-function goHome(){
-  document.getElementById("blog").style.display="none";
-  document.getElementById("home").style.display="block";
-  window.scrollTo(0,0);
-}
-</script>
 </head>
 
 <body>
 
-<!-- HOME -->
-<div id="home">
-  <div class="hero">
-    <div>
-      <h1>Web Diaries</h1>
-      <p>Day-to-Day Blogs • Real Life • Real Learning</p>
-    </div>
-  </div>
+<div class="container">
 
-  <section>
-    <h2>🔥 Hot Topics</h2>
+<h1>🔥 AI & Everyday Life</h1>
+<div class="date">Day-to-Day Blog • Web Diaries</div>
 
-    <div class="card" onclick="openPost()">
-      <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995">
-      <h3>AI & Everyday Life</h3>
-      <p>How AI tools affect real life, daily tasks, and learning.</p>
-    </div>
-  </section>
-</div>
+<p>
+Artificial Intelligence, or AI, is no longer just a topic for scientists
+and engineers. Today, AI is part of our everyday life. Many people use
+AI without even realizing it. From smartphones to online apps, AI works
+quietly in the background to make daily life easier and faster.
+</p>
 
-<!-- BLOG POST -->
-<div id="blog" class="post">
-  <section>
-    <button onclick="goHome()">← Back to Home</button>
+<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="AI in daily life">
 
-    <h1>🔥 AI & Everyday Life</h1>
-    <div class="date">📅 Day-to-Day Blog • January 2026</div>
+<p>
+One of the biggest benefits of AI is convenience. When we search for
+something on the internet, AI helps show better and more accurate
+results. Social media platforms use AI to suggest videos and posts that
+match our interests. Even music apps recommend songs based on what we
+listen to every day.
+</p>
 
-    <p>
-      Artificial Intelligence, also known as AI, is no longer just a tech
-      topic. Today, AI is part of our everyday life. Even if we do not
-      notice it, AI is working behind many apps and tools we use daily.
-    </p>
+<h2>How AI Helps in Daily Tasks</h2>
 
-    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+<p>
+AI helps us complete daily tasks more easily. Voice assistants can set
+alarms, reminders, and answer questions. Navigation apps use AI to find
+shorter routes and avoid traffic. Email services use AI to filter spam
+and keep inboxes clean. These small things save time and reduce stress.
+</p>
 
-    <p>
-      AI tools make life easier by saving time and effort. When we search
-      on Google, AI helps show better answers. When we use social media,
-      AI decides what posts and videos we may like. Even phone cameras
-      use AI to improve photo quality automatically.
-    </p>
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="AI helping daily tasks">
 
-    <h2>How AI Helps in Daily Tasks</h2>
+<h2>Using AI to Learn Faster</h2>
 
-    <p>
-      In daily life, AI helps with small but important tasks. Voice
-      assistants remind us of meetings. Maps use AI to find faster
-      routes. Email apps filter spam messages. These simple things help
-      us stay organized and relaxed.
-    </p>
+<p>
+AI is also changing the way we learn. Students and beginners use AI tools
+to understand difficult topics in simple English. AI can explain lessons,
+give examples, and help with practice. This makes learning faster and
+more enjoyable, especially for people studying online.
+</p>
 
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+<p>
+AI is not here to replace humans. Instead, it supports us by handling
+repetitive work and giving helpful suggestions. This allows people to
+focus on creativity, ideas, and personal growth. AI is no longer just
+tech talk anymore — it has become a natural part of everyone’s daily
+routine.
+</p>
 
-    <h2>Using AI to Learn Faster</h2>
-
-    <p>
-      AI is very helpful for learning. Students and beginners use AI to
-      understand difficult topics in simple English. AI can explain,
-      give examples, and help practice skills. This makes learning less
-      stressful and more enjoyable.
-    </p>
-
-    <p>
-      AI is not here to replace humans. It is here to support us. By
-      handling routine work, AI allows us to focus on creativity and
-      growth. AI is no longer just tech talk — it is now part of
-      everyone’s daily routine.
-    </p>
-  </section>
 </div>
 
 <footer>
-© 2026 Web Diaries • Day-to-Day Blogs
+© 2026 Web Diaries
 </footer>
 
 </body>
