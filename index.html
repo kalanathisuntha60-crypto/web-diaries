@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Web Diaries | Day-to-Day Blogs</title>
+<title>Web Diaries</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Web Diaries – Blogs on AI, productivity, apps, earning, and online learning.">
 
 <style>
 *{box-sizing:border-box}
@@ -13,81 +12,102 @@ body{
   font-family:Arial,Helvetica,sans-serif;
   background:#0f172a;
   color:#e5e7eb;
-  line-height:1.8;
+  line-height:1.9;
 }
-header{
-  background:#020617;
-  padding:20px;
-  text-align:center;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-header h1{margin:0;color:#38bdf8}
-header p{color:#94a3b8}
 
+/* HERO */
+.hero{
+  height:100vh;
+  background:url("https://images.unsplash.com/photo-1519389950473-47ba0277781c") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero-box{
+  background:rgba(0,0,0,0.65);
+  padding:40px;
+  border-radius:18px;
+  text-align:center;
+}
+.hero h1{font-size:3.2rem;margin:0}
+.hero p{color:#cbd5f5;font-size:1.2rem}
+
+/* SECTIONS */
 section{
   max-width:900px;
   margin:auto;
-  padding:40px 20px;
+  padding:60px 20px;
 }
 
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
 .card{
   background:#020617;
   border-radius:16px;
   padding:20px;
-  margin-bottom:30px;
   cursor:pointer;
-  transition:0.3s;
+  transition:.3s;
 }
 .card:hover{transform:translateY(-6px)}
-.card img{
-  width:100%;
-  border-radius:12px;
-}
-.card h2{color:#38bdf8}
+.card img{width:100%;border-radius:12px}
+.card h3{color:#38bdf8}
 
+/* POSTS */
 .post{display:none}
-
-.post img.big{
-  width:100%;
-  border-radius:16px;
-  margin:30px 0;
-}
-.post img.small{
-  width:60%;
-  max-width:420px;
+.post img{
+  width:70%;
+  max-width:520px;
   display:block;
   margin:30px auto;
   border-radius:14px;
 }
-
 button{
-  background:#38bdf8;
-  border:none;
   padding:12px 18px;
+  border:none;
+  background:#38bdf8;
   border-radius:10px;
   font-weight:bold;
   cursor:pointer;
 }
 
+/* FOOTER */
 footer{
-  background:#020617;
   text-align:center;
   padding:20px;
+  background:#020617;
   color:#94a3b8;
+}
+
+/* SPECIAL THANKS */
+.special-thanks{
+  position:fixed;
+  bottom:12px;
+  right:12px;
+  background:rgba(0,0,0,0.7);
+  color:#38bdf8;
+  padding:8px 16px;
+  border-radius:14px;
+  font-size:14px;
+  font-weight:bold;
+  z-index:9999;
 }
 </style>
 
 <script>
-function openPost(id){
+function showPost(id){
   document.getElementById("home").style.display="none";
-  document.querySelectorAll(".post").forEach(p=>p.style.display="none");
+  let posts=document.getElementsByClassName("post");
+  for(let i=0;i<posts.length;i++){posts[i].style.display="none";}
   document.getElementById(id).style.display="block";
   window.scrollTo(0,0);
 }
 function goHome(){
-  document.querySelectorAll(".post").forEach(p=>p.style.display="none");
+  let posts=document.getElementsByClassName("post");
+  for(let i=0;i<posts.length;i++){posts[i].style.display="none";}
   document.getElementById("home").style.display="block";
   window.scrollTo(0,0);
 }
@@ -96,151 +116,135 @@ function goHome(){
 
 <body>
 
-<header>
-  <h1>Web Diaries</h1>
-  <p>Day-to-Day Blogs • Simple English • Real Life</p>
-</header>
-
 <!-- HOME -->
 <div id="home">
-<section>
+  <div class="hero">
+    <div class="hero-box">
+      <h1>Web Diaries</h1>
+      <p>Day-to-Day Blogs • Real Life • Simple English</p>
+    </div>
+  </div>
 
-<div class="card" onclick="openPost('ai')">
-<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995">
-<h2>AI Tools for Students</h2>
+  <section>
+    <h2>🔥 Hot Topics</h2>
+    <div class="grid">
+
+      <div class="card" onclick="showPost('productivity')">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2">
+        <h3>Daily Productivity Tips</h3>
+      </div>
+
+      <div class="card" onclick="showPost('students')">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
+        <h3>AI Tools for Students</h3>
+      </div>
+
+      <div class="card" onclick="showPost('apps')">
+        <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284">
+        <h3>Mobile Apps That Save Time</h3>
+      </div>
+
+      <div class="card" onclick="showPost('earning')">
+        <img src="https://images.unsplash.com/photo-1604594849809-dfedbc827105">
+        <h3>Online Earning Basics</h3>
+      </div>
+
+      <div class="card" onclick="showPost('learning')">
+        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8">
+        <h3>Learning Skills Online</h3>
+      </div>
+
+    </div>
+  </section>
 </div>
 
-<div class="card" onclick="openPost('productivity')">
-<img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2">
-<h2>Daily Productivity Tips</h2>
-</div>
-
-<div class="card" onclick="openPost('apps')">
-<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
-<h2>Mobile Apps That Save Time</h2>
-</div>
-
-<div class="card" onclick="openPost('earning')">
-<img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e">
-<h2>Online Earning Basics</h2>
-</div>
-
-<div class="card" onclick="openPost('skills')">
-<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
-<h2>Learning Skills Online</h2>
-</div>
-
-</section>
-</div>
-
-<!-- AI -->
-<div id="ai" class="post">
-<section>
-<button onclick="goHome()">← Back</button>
-<h1>AI Tools for Students</h1>
-<img class="big" src="https://images.unsplash.com/photo-1677442136019-21780ecad995">
-
-<p>
-AI tools are changing the way students learn today. Many students use AI to understand lessons, summarize notes, and prepare for exams. These tools explain topics in simple English, making learning easier for beginners and online learners.
-</p>
-
-<p>
-Students also use AI to improve writing and grammar. AI suggests better sentences and corrects mistakes, helping students learn faster. It saves time and builds confidence while studying.
-</p>
-
-<p>
-AI also helps manage study time. Smart reminders, planners, and learning tools help students stay organized. AI has become a daily learning partner for modern students.
-</p>
-</section>
-</div>
-
-<!-- PRODUCTIVITY -->
-<div id="productivity" class="post">
-<section>
+<!-- POST 1 -->
+<div id="productivity" class="post"><section>
 <button onclick="goHome()">← Back</button>
 <h1>Daily Productivity Tips</h1>
-<img class="small" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2">
-
+<img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2">
 <p>
-Productivity means doing important work effectively. Simple habits like planning the day and setting priorities can improve productivity greatly.
+Productivity is about using time wisely, not working until exhaustion. Many people feel busy all day but still fail to complete meaningful work. This happens because there is no clear plan, too many distractions, and poor time management. Productivity begins with clarity. When you know exactly what you need to do, your mind becomes calm and focused. Writing daily goals, setting priorities, and planning tasks in advance reduces confusion and stress. A simple to-do list can transform an unorganized day into a productive one.
 </p>
-
 <p>
-Taking short breaks refreshes the mind and improves focus. Avoiding distractions like notifications helps save time and energy.
+Distractions are the biggest enemies of productivity. Mobile phones, social media, constant notifications, and multitasking break concentration repeatedly. Every interruption wastes mental energy. Turning off unnecessary notifications, keeping the phone away while working, and creating a quiet environment improves focus dramatically. Productivity is not about doing many things at once; it is about doing one thing properly.
 </p>
-
 <p>
-Consistency is the key. Small daily efforts lead to big long-term results.
+Time management is another powerful skill. Techniques such as time blocking help divide the day into focused work sessions. Working for 30–45 minutes followed by a short break keeps the brain fresh. Breaks are not laziness; they are recovery. Stretching, walking, or resting the eyes improves long-term performance. Consistent routines, healthy sleep, good nutrition, and mental balance create sustainable productivity. Productivity is not pressure — it is balance, discipline, and smart habits practiced daily.
 </p>
-</section>
-</div>
+</section></div>
 
-<!-- APPS -->
-<div id="apps" class="post">
-<section>
+<!-- POST 2 -->
+<div id="students" class="post"><section>
+<button onclick="goHome()">← Back</button>
+<h1>AI Tools for Students</h1>
+<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
+<p>
+Artificial Intelligence tools have transformed how students learn today. AI acts like a personal tutor available anytime. Students can understand difficult lessons through simplified explanations, instant answers, and examples. AI helps with homework, exam preparation, note-making, and research. It saves time and reduces confusion, especially for online learners.
+</p>
+<p>
+Writing assistants help students improve grammar, vocabulary, and clarity. These tools teach by correction, allowing students to learn from mistakes. Research becomes faster as AI summarizes information and highlights key points. Learning becomes interactive and less stressful. AI also supports students with learning disabilities by offering personalized pacing and guidance.
+</p>
+<p>
+Study planners powered by AI help manage time effectively. They track progress, set reminders, and suggest improvements. While AI does not replace teachers, it enhances education by making learning flexible, personalized, and accessible. When used responsibly, AI builds confidence, improves performance, and prepares students for future careers.
+</p>
+</section></div>
+
+<!-- POST 3 -->
+<div id="apps" class="post"><section>
 <button onclick="goHome()">← Back</button>
 <h1>Mobile Apps That Save Time</h1>
-<img class="small" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
-
+<img src="https://images.unsplash.com/photo-1556155092-490a1ba16284">
 <p>
-Mobile apps help manage daily life easily. Calendar and reminder apps help organize tasks and schedules.
+Mobile apps simplify daily life by organizing tasks, reminders, communication, and learning. Calendar apps schedule events, navigation apps avoid traffic, and shopping apps save travel time. These tools automate routine work, allowing users to focus on important goals.
 </p>
-
 <p>
-Productivity apps store notes, track habits, and manage work efficiently.
+Communication apps reduce delays and improve teamwork. Collaboration tools allow people to work remotely and efficiently. Banking, health, and learning apps save hours by bringing services directly to the phone. Mobile apps replace slow traditional methods with fast digital solutions.
 </p>
-
 <p>
-Choosing useful apps wisely can save hours every week.
+When used wisely, mobile apps reduce stress and increase efficiency. They help people manage time better and live more organized lives. The key is using apps intentionally, not allowing them to become distractions.
 </p>
-</section>
-</div>
+</section></div>
 
-<!-- EARNING -->
-<div id="earning" class="post">
-<section>
+<!-- POST 4 -->
+<div id="earning" class="post"><section>
 <button onclick="goHome()">← Back</button>
 <h1>Online Earning Basics</h1>
-<img class="small" src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e">
-
+<img src="https://images.unsplash.com/photo-1604594849809-dfedbc827105">
 <p>
-Online earning allows people to work from anywhere. Freelancing and digital services are popular options.
+Online earning allows people to generate income using the internet. Freelancing, content creation, digital services, and online selling are popular options. The biggest benefit is flexibility — people can work from anywhere.
 </p>
-
 <p>
-Learning a skill and improving it daily helps build income opportunities.
+Beginners must learn basic skills and avoid scams. Genuine earning requires effort, patience, and consistency. Skills improve income over time. Online earning is not instant wealth but long-term growth.
 </p>
-
 <p>
-Online earning takes time, patience, and consistency to succeed.
+With discipline and continuous learning, online earning provides independence and financial opportunity. It empowers people to build careers beyond traditional jobs.
 </p>
-</section>
-</div>
+</section></div>
 
-<!-- SKILLS -->
-<div id="skills" class="post">
-<section>
+<!-- POST 5 -->
+<div id="learning" class="post"><section>
 <button onclick="goHome()">← Back</button>
 <h1>Learning Skills Online</h1>
-<img class="small" src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
-
+<img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8">
 <p>
-Online learning gives access to skills from anywhere in the world.
+Online learning removes limits of time and location. People can learn technology, business, languages, and creative skills anytime. Courses are flexible, affordable, and accessible worldwide.
 </p>
-
 <p>
-Setting goals and practicing regularly helps learners stay motivated.
+Different learning styles are supported through videos, reading, and practice. Online learning builds discipline, independence, and adaptability. Certificates and projects increase career value.
 </p>
-
 <p>
-Online skills can improve careers and personal growth.
+Consistency is the key. Daily learning, practice, and application create mastery. Online learning opens doors to growth, opportunity, and lifelong improvement.
 </p>
-</section>
-</div>
+</section></div>
 
 <footer>
 © 2026 Web Diaries
 </footer>
+
+<div class="special-thanks">
+Special Thanks Madushika Kavindi
+</div>
 
 </body>
 </html>
