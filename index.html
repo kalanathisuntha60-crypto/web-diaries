@@ -2,102 +2,240 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AI & Everyday Life | Web Diaries</title>
+<title>Web Diaries | Day-to-Day Blogs</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AI & Everyday Life – How artificial intelligence helps in daily tasks and learning.">
+<meta name="description" content="Web Diaries – Blogs on AI, productivity, apps, earning, and online learning.">
 
 <style>
+*{box-sizing:border-box}
 body{
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
   background:#0f172a;
   color:#e5e7eb;
   line-height:1.8;
 }
-.container{
+header{
+  background:#020617;
+  padding:20px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+header h1{margin:0;color:#38bdf8}
+header p{color:#94a3b8}
+
+section{
   max-width:900px;
   margin:auto;
   padding:40px 20px;
 }
-h1{
-  color:#38bdf8;
+
+.card{
+  background:#020617;
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:30px;
+  cursor:pointer;
+  transition:0.3s;
 }
-h2{
-  margin-top:40px;
-  color:#60a5fa;
-}
-.date{
-  color:#94a3b8;
-  font-size:0.9rem;
-}
-img{
-  width:60%;
-  max-width:450px;
-  display:block;
-  margin:30px auto;
+.card:hover{transform:translateY(-6px)}
+.card img{
+  width:100%;
   border-radius:12px;
 }
+.card h2{color:#38bdf8}
+
+.post{display:none}
+
+.post img.big{
+  width:100%;
+  border-radius:16px;
+  margin:30px 0;
+}
+.post img.small{
+  width:60%;
+  max-width:420px;
+  display:block;
+  margin:30px auto;
+  border-radius:14px;
+}
+
+button{
+  background:#38bdf8;
+  border:none;
+  padding:12px 18px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
 footer{
+  background:#020617;
   text-align:center;
   padding:20px;
-  background:#020617;
   color:#94a3b8;
 }
 </style>
+
+<script>
+function openPost(id){
+  document.getElementById("home").style.display="none";
+  document.querySelectorAll(".post").forEach(p=>p.style.display="none");
+  document.getElementById(id).style.display="block";
+  window.scrollTo(0,0);
+}
+function goHome(){
+  document.querySelectorAll(".post").forEach(p=>p.style.display="none");
+  document.getElementById("home").style.display="block";
+  window.scrollTo(0,0);
+}
+</script>
 </head>
 
 <body>
 
-<div class="container">
+<header>
+  <h1>Web Diaries</h1>
+  <p>Day-to-Day Blogs • Simple English • Real Life</p>
+</header>
 
-<h1>🔥 AI & Everyday Life</h1>
-<div class="date">Day-to-Day Blog • Web Diaries</div>
+<!-- HOME -->
+<div id="home">
+<section>
+
+<div class="card" onclick="openPost('ai')">
+<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995">
+<h2>AI Tools for Students</h2>
+</div>
+
+<div class="card" onclick="openPost('productivity')">
+<img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2">
+<h2>Daily Productivity Tips</h2>
+</div>
+
+<div class="card" onclick="openPost('apps')">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+<h2>Mobile Apps That Save Time</h2>
+</div>
+
+<div class="card" onclick="openPost('earning')">
+<img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e">
+<h2>Online Earning Basics</h2>
+</div>
+
+<div class="card" onclick="openPost('skills')">
+<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
+<h2>Learning Skills Online</h2>
+</div>
+
+</section>
+</div>
+
+<!-- AI -->
+<div id="ai" class="post">
+<section>
+<button onclick="goHome()">← Back</button>
+<h1>AI Tools for Students</h1>
+<img class="big" src="https://images.unsplash.com/photo-1677442136019-21780ecad995">
 
 <p>
-Artificial Intelligence, or AI, is no longer just a topic for scientists
-and engineers. Today, AI is part of our everyday life. Many people use
-AI without even realizing it. From smartphones to online apps, AI works
-quietly in the background to make daily life easier and faster.
-</p>
-
-<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="AI in daily life">
-
-<p>
-One of the biggest benefits of AI is convenience. When we search for
-something on the internet, AI helps show better and more accurate
-results. Social media platforms use AI to suggest videos and posts that
-match our interests. Even music apps recommend songs based on what we
-listen to every day.
-</p>
-
-<h2>How AI Helps in Daily Tasks</h2>
-
-<p>
-AI helps us complete daily tasks more easily. Voice assistants can set
-alarms, reminders, and answer questions. Navigation apps use AI to find
-shorter routes and avoid traffic. Email services use AI to filter spam
-and keep inboxes clean. These small things save time and reduce stress.
-</p>
-
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="AI helping daily tasks">
-
-<h2>Using AI to Learn Faster</h2>
-
-<p>
-AI is also changing the way we learn. Students and beginners use AI tools
-to understand difficult topics in simple English. AI can explain lessons,
-give examples, and help with practice. This makes learning faster and
-more enjoyable, especially for people studying online.
+AI tools are changing the way students learn today. Many students use AI to understand lessons, summarize notes, and prepare for exams. These tools explain topics in simple English, making learning easier for beginners and online learners.
 </p>
 
 <p>
-AI is not here to replace humans. Instead, it supports us by handling
-repetitive work and giving helpful suggestions. This allows people to
-focus on creativity, ideas, and personal growth. AI is no longer just
-tech talk anymore — it has become a natural part of everyone’s daily
-routine.
+Students also use AI to improve writing and grammar. AI suggests better sentences and corrects mistakes, helping students learn faster. It saves time and builds confidence while studying.
 </p>
 
+<p>
+AI also helps manage study time. Smart reminders, planners, and learning tools help students stay organized. AI has become a daily learning partner for modern students.
+</p>
+</section>
+</div>
+
+<!-- PRODUCTIVITY -->
+<div id="productivity" class="post">
+<section>
+<button onclick="goHome()">← Back</button>
+<h1>Daily Productivity Tips</h1>
+<img class="small" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2">
+
+<p>
+Productivity means doing important work effectively. Simple habits like planning the day and setting priorities can improve productivity greatly.
+</p>
+
+<p>
+Taking short breaks refreshes the mind and improves focus. Avoiding distractions like notifications helps save time and energy.
+</p>
+
+<p>
+Consistency is the key. Small daily efforts lead to big long-term results.
+</p>
+</section>
+</div>
+
+<!-- APPS -->
+<div id="apps" class="post">
+<section>
+<button onclick="goHome()">← Back</button>
+<h1>Mobile Apps That Save Time</h1>
+<img class="small" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+
+<p>
+Mobile apps help manage daily life easily. Calendar and reminder apps help organize tasks and schedules.
+</p>
+
+<p>
+Productivity apps store notes, track habits, and manage work efficiently.
+</p>
+
+<p>
+Choosing useful apps wisely can save hours every week.
+</p>
+</section>
+</div>
+
+<!-- EARNING -->
+<div id="earning" class="post">
+<section>
+<button onclick="goHome()">← Back</button>
+<h1>Online Earning Basics</h1>
+<img class="small" src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e">
+
+<p>
+Online earning allows people to work from anywhere. Freelancing and digital services are popular options.
+</p>
+
+<p>
+Learning a skill and improving it daily helps build income opportunities.
+</p>
+
+<p>
+Online earning takes time, patience, and consistency to succeed.
+</p>
+</section>
+</div>
+
+<!-- SKILLS -->
+<div id="skills" class="post">
+<section>
+<button onclick="goHome()">← Back</button>
+<h1>Learning Skills Online</h1>
+<img class="small" src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
+
+<p>
+Online learning gives access to skills from anywhere in the world.
+</p>
+
+<p>
+Setting goals and practicing regularly helps learners stay motivated.
+</p>
+
+<p>
+Online skills can improve careers and personal growth.
+</p>
+</section>
 </div>
 
 <footer>
